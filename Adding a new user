@@ -1,0 +1,84 @@
+package projectpersonal;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+public class addUser {
+
+    public addUser() {
+        //This is to create the JFrame:
+        JFrame addFrame=new JFrame("Add User Form");
+        addFrame.setSize(600,400);
+        addFrame.setLocationRelativeTo(null);//Places the JFrame at the centre of the screen
+        addFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Terminate the frame when it is closed
+        addFrame.setVisible(true);
+        
+         JButton b3=new JButton("CLEAR");//This creates and names the clear button
+        b3.setBounds(100,300,140,40);//This sets the size and placement of the button on the JFrame
+        JButton b4=new JButton("Save User");//Creates and names the Login button
+        b4.setBounds(300,300,140,40);//Sets the size and placement of the button on the JFrame
+        
+        
+        JLabel label5 = new JLabel();//This is a label that displays the heading of the JFrame
+        label5.setText("ADD NEW USER");
+        label5.setBounds(30,0,130,30);
+        
+        JLabel label1=new JLabel();//This is the label that indicates that the user is to  input their First Name
+        label1.setText("First Name");//Sets a name for the label
+        label1.setBounds(30,50,130,30);//Sets the size and placement on the JFrame
+        
+        JLabel label2=new JLabel();//This label indicates that the user is to input their Last Name 
+        label2.setText("Last Name");//Sets a name for the label
+        label2.setBounds(30,100,130,30);//Sets the size and placement on the JFrame
+        
+        JLabel label3=new JLabel();//This label indicates that the user is to input their Telephone number
+        label3.setText("Telephone");//Sets a name for the label
+        label3.setBounds(30,150,130,30);//Sets the size and placement on the JFrame
+        
+        JLabel label4=new JLabel();//This label indicates that the user is to input their date of birth 
+        label4.setText("Date of Birth");//Sets a name for the label
+        label4.setBounds(30,200,130,30);//Sets the size and placement on the JFrame
+        
+        JTextField textfield3 =new JTextField();//This is where the user will input their First name
+        textfield3.setBounds(110,50,130,30);//Sets the size and placement on the JFrame
+        JTextField textfield4=new JTextField();//This is where the user inputs their last name
+        textfield4.setBounds(110,100,130,30);//Sets the size and olacement on the JFrame.
+        JTextField textfield5 =new JTextField();//This is where the user will input their telephone number
+        textfield5.setBounds(110,150,130,30);
+        JTextField textfield6 =new JTextField();//This is where the user will input their date of birth
+        textfield6.setBounds(110,200,130,30);
+        
+        //The folowing block of code ensures that the fields areactually displayed on the Frame.
+        addFrame.add(label1);
+        addFrame.add(textfield3);
+        addFrame.add(textfield4);
+        addFrame.add(textfield5);
+        addFrame.add(textfield6);
+        addFrame.add(label1);
+        addFrame.add(label2);
+        addFrame.add(label3);
+        addFrame.add(label4);
+        addFrame.add(label5);
+        addFrame.add(b3);
+        addFrame.add(b4);
+        addFrame.setSize(600,400);
+        addFrame.setLayout(null);
+        addFrame.setVisible(true);
+        addFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Terminates the JFrame when closed
+        
+        //To ensure that the clear button clears all fields when pressed, the following code is executed:
+         b3.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                textfield3.setText("");
+                textfield4.setText("");
+                textfield5.setText("");
+                textfield6.setText("");
+            }
+        });
+    }
+    
+}
