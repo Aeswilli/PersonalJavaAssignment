@@ -1,0 +1,62 @@
+package projectpersonal;
+
+import java.awt.PopupMenu;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
+public class DashForm{
+    public DashForm() {
+         JFrame DashFrame=new JFrame("Home");
+         DashFrame.setLocationRelativeTo(null);
+
+        DashFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        DashFrame.setVisible(true);
+        
+        JButton b3=new JButton("Add User");
+         b3.setBounds(100,200,140,40);
+        
+         JButton b5 = new JButton("Logout");
+        b5.setBounds(150,250,140,40);
+        
+        DashFrame.add(b3);
+        DashFrame.add(b5);
+        DashFrame.setVisible(true);
+        DashFrame.setLayout(null);
+        DashFrame.setVisible(true);
+        DashFrame.setSize(600,400);
+        DashFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        b3.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent ae){
+                DashFrame.dispose();
+                new  addUser();
+                
+            }
+        });
+        
+        b5.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ae)
+                {
+                    System.exit(0);
+                }
+            });
+        
+        }  
+
+
+    void setVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private PopupMenu newJLabel(ImageIcon imageIcon) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private void add(JButton b3) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    }
