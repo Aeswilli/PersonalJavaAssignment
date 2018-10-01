@@ -1,0 +1,88 @@
+package projectpersonal;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+//These are all the necessary packages invoked for the code:
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+public class ProjectPersonal {
+    ProjectPersonal(){
+        
+    }
+                
+    public static void main(String[] args){
+      JFrame f =new JFrame("Login");//Creates a new frame (The Login frame)
+      f.setLocationRelativeTo(null);//This displays the JFrame at the centre of the screen
+        
+        JButton b1=new JButton("CLEAR");//This creates and names the clear button
+        b1.setBounds(100,200,140,40);//This sets the size and placement of the button on the JFrame
+        JButton b2=new JButton("LOGIN");//Creates and names the Login button
+        b2.setBounds(300,200,140,40);//Sets the size and placement of the button on the JFrame
+        
+        JLabel label1=new JLabel();//This is the label that indicates that the user is to  input their username 
+        label1.setText("Username");//Sets a name for the label
+        label1.setBounds(10,15,200,100);//Sets the size and placement on the JFrame
+        
+        JLabel label2=new JLabel();//This label indicates that the user is to input their password 
+        label2.setText("Password");//Sets a name for the label
+        label2.setBounds(10,65,200,100);//Sets the size and placement on the JFrame
+        
+        JTextField textfield1 =new JTextField();//This is where the user will input their username
+        textfield1.setBounds(110,50,130,30);//Sets the size and placement on the JFrame
+        JPasswordField pfield=new JPasswordField();//This is where the user inputs their password. It is a JPasswordField because the user password needs to be encrypted.
+        pfield.setBounds(110,100,130,30);//Sets the size and olacement on the JFrame.
+        
+        //The folowing block of code ensures that the fields areactually displayed on the Frame.
+        f.add(label1);
+        f.add(textfield1);
+        f.add(pfield);
+        f.add(label1);
+        f.add(label2);
+        f.add(b1);
+        f.add(b2);
+        f.setSize(600,400);
+        f.setLayout(null);
+        f.setVisible(true);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//Terminates the JFrame when closed
+        
+        //This is to make the clear button erase the username and password typed in before logging in 
+        b1.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                textfield1.setText("");
+                pfield.setText("");
+            }
+        });
+        
+        //This is to make the login button accept the data and enable the user to view the dashboard. It also prompts the program to close the login JFrame
+        b2.addActionListener(new ActionListener(){
+          private DashForm DashForm;
+            @Override
+            public void actionPerformed(ActionEvent e){
+                        String userName = textfield1.getText();
+        String passWord = pfield.getText();
+        
+        if(passWord.equals("pass@321")&& userName.equals("users")){
+            DashForm = new DashForm();
+            DashForm.setVisible(true);
+            JLabel entry = new JLabel ("Welcome "+textfield1);
+            f.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            f.dispose();
+            
+        }
+        else{
+            JOptionPane.showMessageDialog(f, "Incorrect Username or Password!");
+        }
+            }
+
+          private void dispose() {
+              throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+          }
+        });
+    }
+}
